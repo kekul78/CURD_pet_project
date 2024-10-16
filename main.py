@@ -4,8 +4,9 @@ from contextlib import asynccontextmanager
 from database import create_database, delete_database
 from router import router as task_ruter
 
+
 @asynccontextmanager
-async def lifespan(app:FastAPI):
+async def lifespan(app: FastAPI):
     await create_database()
     yield
     await delete_database()
